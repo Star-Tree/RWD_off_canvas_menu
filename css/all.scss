@@ -1,0 +1,177 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* *************** user-defined as shown below ****************** */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體";
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+.wrap {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.aside {
+	width: 270px;
+	position: absolute;
+	left: 0;
+	padding: 1em;
+	background: yellow;
+	text-align: center;
+	transform: translateX(-271px);
+	transition: all .5s;
+
+	.close_mobileMenu {  // a
+		max-width: 20%;
+		padding: 5px;
+		color: white;
+		background: green;
+	}
+
+	.aside-menu li a {  // ul
+		margin-top: 1em;
+		padding: 1em 0;
+		color: white;
+		background: black;
+
+		&:hover {
+			background: blue;
+		}
+	}
+}
+
+.main-nav {
+	height: 50px;
+	display: flex;
+	justify-content: flex-end;
+	background: red;
+
+	a {
+		color: white;
+		text-align: center;
+	}
+
+	.mobileMenu {  // a
+		display: none;
+	}
+
+	.main-nav-menu {  // ul
+		width: 400px;
+		display: flex;
+
+		li a {
+			width: 100px;
+			height: 50px;
+			padding-top: 17px;
+			transition: .5s;
+
+			&:hover {
+				background: orange;
+			}
+		}
+	}
+}
+
+.main-content {
+	padding: 1em;
+
+	p {
+		margin-bottom: 1em;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.main-nav {
+		justify-content: flex-start;
+
+		.main-nav-menu {
+			display: none;
+		}
+
+		.mobileMenu {  // a
+			display: block;
+			align-self: flex-start;
+			padding: 5px;
+			margin: 12px 0 0 12px;
+			background: green;
+		}
+	}
+
+	.open {
+		.main {
+			transform: translateX(270px);  // 行動版時, 主內容 也會壓縮到佔滿整個版面. 因此必須往右移開 270px的距離
+		}
+
+		.aside {
+			transform: translateX(0px); // 讓 側邊選單 位移回來
+		}
+	}
+}
+
+// * {
+// 	outline: 1px solid;
+// }

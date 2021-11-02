@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* *************** user-defined as shown below ****************** */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft JhengHei", "微軟正黑體";
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.aside {
+  width: 270px;
+  position: absolute;
+  left: 0;
+  padding: 1em;
+  background: yellow;
+  text-align: center;
+  -webkit-transform: translateX(-271px);
+          transform: translateX(-271px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.aside .close_mobileMenu {
+  max-width: 20%;
+  padding: 5px;
+  color: white;
+  background: green;
+}
+
+.aside .aside-menu li a {
+  margin-top: 1em;
+  padding: 1em 0;
+  color: white;
+  background: black;
+}
+
+.aside .aside-menu li a:hover {
+  background: blue;
+}
+
+.main-nav {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: red;
+}
+
+.main-nav a {
+  color: white;
+  text-align: center;
+}
+
+.main-nav .mobileMenu {
+  display: none;
+}
+
+.main-nav .main-nav-menu {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-nav .main-nav-menu li a {
+  width: 100px;
+  height: 50px;
+  padding-top: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.main-nav .main-nav-menu li a:hover {
+  background: orange;
+}
+
+.main-content {
+  padding: 1em;
+}
+
+.main-content p {
+  margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .main-nav .main-nav-menu {
+    display: none;
+  }
+  .main-nav .mobileMenu {
+    display: block;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding: 5px;
+    margin: 12px 0 0 12px;
+    background: green;
+  }
+  .open .main {
+    -webkit-transform: translateX(270px);
+            transform: translateX(270px);
+  }
+  .open .aside {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+/*# sourceMappingURL=all.css.map */
