@@ -114,6 +114,11 @@ a {
   background: blue;
 }
 
+.main {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 .main-nav {
   height: 50px;
   display: -webkit-box;
